@@ -1,4 +1,5 @@
 function formatDate(timestamp) {
+
    let date = new Date(timestamp);
    let hours = date.getHours();
    if (hours < 10) {
@@ -12,23 +13,27 @@ function formatDate(timestamp) {
    let day = days[date.getDay()];
    return `${day}${hours}:${minutes}`;
 }
-
+//
 function displayTemperature(responce) {
-   //console.log(responce.data.main.name);
+   console.log(responce.data);
    let cityElement = document.querySelector("#city");
    let temperatureElement = document.querySelector("#temperature");
    let descriptionElement = document.querySelector("#description");
    let humidityElement = document.querySelector("#humidity");
    let windElement = document.querySelector("#wind");
    let dateElement = document.querySelector("#date");
+   let iconElement = document.querySelector("#icon");
 
    cityElement.innerHTML = responce.data.name;
    temperatureElement.innerHTML = Math.round(responce.data.main.temp);
    descriptionElement.innerHTML = responce.data.weather[0].description;
    humidityElement.innerHTML = responce.data.main.humidity;
    windElement.innerHTML = Math.round(responce.data.wind.speed);
-   dateElement.innerHTML = formatDate(responce.data.dt * 1000);
+   dateElement.innerHTML = formatDate(responce.data.coord.dt * 1000);
+   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${responce.data.weather[0].icon}@2x.png`);
+   iconElement.setAttribute("alt", responce.data.weather[0].description);
 }
-let apiKey = "e91d8831d4722ffce7b07417a253b9dc"
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London&APPID=e91d8831d4722ffce7b07417a253b9dc&units=metric `;
+let apiKey = "e91d8831d4722ffce7b07417a253b9dc";
+let city = "London";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=e91d8831d4722ffce7b07417a253b9dc&units=metric `;
 axios.get(apiUrl).then(displayTemperature);
