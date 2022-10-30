@@ -79,10 +79,20 @@ a {
    text-decoration: none;
 }
 
-.netlify {
-   word-spacing: 15px;
+.weather-forecast {
+   margin-top: 20px;
+   text-align: center;
 }
 
-.gh {
-   word-spacing: 15px;
+.weather-forecast-date {
+   font-size: 16px;
+   opacity: 0.5;
+}
+
+.weather-forecast-temperature-min {
+   opacity: 0.5;
+}
+
+.weather-forecast-temperature {
+   font-size: 13px;
 }
