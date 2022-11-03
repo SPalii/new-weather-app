@@ -54,9 +54,6 @@ function displayForecast(responce) {   // call this fun. to show daily temp
 function getForecast(coordinates) {
    console.log(coordinates);
    let apiKey = "597c40c39084687093b091cd48b366f8";
-   // let apiKey = "29a9dfa86a36d30a75ecd31d41dcc75f";
-   //let apiKey = "e91d8831d4722ffce7b07417a253b9dc";
-
    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 
    axios.get(apiUrl).then(displayForecast); // daily temp 
@@ -87,12 +84,7 @@ function displayTemperature(responce) {
 }
 
 function search(city) {
-
    let apiKey = "597c40c39084687093b091cd48b366f8";
-
-   //let apiKey = "e91d8831d4722ffce7b07417a253b9dc";
-   //let apiKey = "29a9dfa86a36d30a75ecd31d41dcc75f";
-   //   let city = "Paris";
    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric `;
    axios.get(apiUrl).then(displayTemperature);
 }

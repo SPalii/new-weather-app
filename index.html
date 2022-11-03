@@ -28,7 +28,7 @@
                   </div>
 
                   <div class="col-3">
-                     <input type="submit" value="search" class="btn btn-primary w-100" />
+                     <input type="submit" value="search" class="btn btn-outline-primary w-100" id="search-btn" />
                   </div>
                </div>
             </form>
@@ -37,8 +37,10 @@
                <h1 id="city"></h1>
                <ul>
                   <li> Last updated: <span id="date"></span></li>
+                  <!-- 
                   <li id="description"></li>
                </ul>
+               -->
             </div>
 
             <div class="row">
@@ -60,8 +62,11 @@
 
                <div class="col-6">
                   <ul>
+                     <li id="description"></li>
+
                      <li>Humidity:<span id="humidity"></span>%</li>
                      <li>Wind:<span id="wind"></span> km/h</li>
+
                   </ul>
                </div>
                <div class="weather-forecast" id="forecast">
