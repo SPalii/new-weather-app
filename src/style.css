@@ -28,16 +28,12 @@ li:first-letter {
    text-transform: capitalize;
 }
 
-.search-btn {
-   color: rgb(255, 255, 255);
-}
-
 .form-control {
    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .weather-app-wrapper {
-   max-width: 600px;
+   max-width: 620px;
    margin: 30px auto;
    border: #878787;
    border-radius: 0.3;
@@ -53,6 +49,7 @@ li:first-letter {
 
 .overview {
    margin-bottom: 20px;
+   margin-left: 20px;
 }
 
 .weather-temperature img {

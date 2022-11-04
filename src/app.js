@@ -56,7 +56,7 @@ function getForecast(coordinates) {
    let apiKey = "597c40c39084687093b091cd48b366f8";
    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 
-   axios.get(apiUrl).then(displayForecast); // daily temp 
+   axios.get(apiUrl).then(displayForecast);
 }
 //
 function displayTemperature(responce) {
@@ -124,4 +124,21 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Kyiv");
+
+//
+function findLocation(position) {
+   let lat = position.coords.latitude;
+   let lon = position.coords.longitude;
+   let apiKey = "e91d8831d4722ffce7b07417a253b9dc";
+   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+   axios.get(apiUrl).then(displayTemperature);
+}
+
+function showCurrentPosition(event) {
+   event.preventDefault();
+   navigator.geolocation.getCurrentPosition(findLocation);
+}
+
+let currentButton = document.querySelector("#current-button");
+currentButton.addEventListener("click", showCurrentPosition);
 

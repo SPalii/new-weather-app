@@ -22,25 +22,30 @@
             <form id="form-serch" class="mb-3">
                <div class="row">
 
-                  <div class="col-9">
-                     <input type="search" placeholder="Type a city name" class="form-control" id="city-input"
-                        autocomplete="off" />
+                  <div class="col-6">
+                     <input type="search" placeholder="Type a city name" class="form-control form-control-sm"
+                        id="city-input" autocomplete="off" />
+                  </div>
+                  <div class="col-3">
+                     <input type="submit" value="Search" class="form-control btn btn-light  btn-sm w-100"
+                        id="search-btn" />
                   </div>
 
                   <div class="col-3">
-                     <input type="submit" value="search" class="btn btn-outline-primary w-100" id="search-btn" />
+                     <button type="Submit" value="Seach" id="current-button"
+                        class="   btn btn-outline-primary btn-sm ">Current
+                        location</button>
                   </div>
+
                </div>
+
             </form>
 
             <div class="overview">
                <h1 id="city"></h1>
                <ul>
                   <li> <span id="date"></span></li>
-                  <!-- 
-                  <li id="description"></li>
                </ul>
-               -->
             </div>
 
             <div class="row">
